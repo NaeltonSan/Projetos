@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    
+</head>
+<body>
+<h1>Programa Verifica a Velocidade</h1>
+<p>Velocidade Permetida : <input type="text" id="inPermetida"></p>
+<p>Velocidade Condutor  : <input type="text" id="inCondutor"></p>
+<input type="button" value="Verificar Velocidade!" id="btCalcular">
+<h2 id="outResposta"></h2>
+
+<script>
+    function velocidade(){
+    var inPermetida = document.getElementById("inPermetida");
+    var inCondutor = document.getElementById("inCondutor");
+    var outResposta = document.getElementById("outResposta");
+    // obter conteudo dos campos de edição da página
+    var permetida = Number(inPermetida.value);
+    var condutor = Number(inCondutor.value);
+    
+    if ( isNaN(permetida) || isNaN(condutor) 
+    || permetida == "" || condutor == ""){
+     alert("Insira uma velocidade válida!");
+     inPermetida.focus();
+     return;
+    }
+   
+    if (condutor <= permetida ){
+    outResposta.textContent = "Sem Multa!"
+    } else{
+        var MaisVinte = (permetida* 0.20) + permetida;
+        if (MaisVinte >= condutor){
+            outResposta.textContent = "Multa Leve!"
+        } else{
+            outResposta.textContent = "Multa Pesada!"
+        }
+    }
+  
+}
+    var btCalcular = document.getElementById("btCalcular")
+    btCalcular.addEventListener("click",velocidade);
+    
+</script>
+</body>
+</html>

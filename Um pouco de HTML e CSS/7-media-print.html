@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    @media print{
+        *{
+            background: transparent !important; /* cuidado , pois se tiver uma img, precisamos coloca-la numa tag img*/
+            color: #000 !important;
+            box-shadow: none !important;
+            border-color: #000 !important;
+            text-shadow: none !important;
+        }
+        
+        a{
+            text-decoration: underline !important; /*links devem ser links */
+            
+        }
+        a[href]::after {    
+            content: ' (' attr(href) ')';   /* na versão impressa, vai ter o site por extenso*/
+            } 
+    }
+    </style>
+
+    <a href="www.google.com.br">Google</a>
+</body>
+</html>

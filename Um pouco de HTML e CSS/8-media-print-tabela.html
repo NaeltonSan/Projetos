@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        *{
+            margin:auto;
+            
+        }
+        h1{
+            text-align: center;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(1) {
+            color: red;
+        }
+
+        tr:nth-child(2) {
+            color: green;
+            background-color: #f7f0f0;
+        }
+
+        td {
+            width: 400px;
+        }
+
+        tr td {
+            text-align: center;
+        }
+
+        @media print {
+            * {
+                color: #000 !important;
+            }
+
+            table {
+                width: 100%;
+            }
+
+            td {
+                border-color: #000;
+            }
+
+            a::after {
+                content: '('attr(href) ')';
+                margin-left: 2px;
+            }
+
+            .actions {
+                display: none;
+            }
+
+            #expense::before {
+                content: "-";
+            }
+
+            #expense::after {
+                content: "- Despesa";
+            }
+
+            #profit::before {
+                content: "+";
+            }
+
+            #profit::after {
+                content: "-Receita";
+            }
+        }
+    </style>
+    <table>
+        <h1>Transações Exemplo</h1>
+        <tr>
+            <td><a href="http://exemplo/transacao/01">Transação 01</a></td>
+            <td id="expense">R$ 200,00</td>
+            <td><button>Editar</button></td>
+        </tr>
+        <tr>
+            <td><a href="http://exemplo/transacao/02">Transação 02</a></td>
+            <td id="profit">R$ 500,00</td>
+            <td><button>Editar</button></td>
+        </tr>
+
+    </table>
+</body>
+
+</html>

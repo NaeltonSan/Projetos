@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    
+</head>
+<body>
+<h1>É Par ou Impar</h1>
+<p>Numero:<input type="text" id="inNumero"></p>
+<input type="button" value="Verificar se é par ou ímpar!" id="btCalcular">
+<p id="outResposta"></p>
+
+<script>
+    function parOuImpar(){
+    var inNumero = document.getElementById("inNumero");
+    var outResposta = document.getElementById("outResposta");
+    // obter conteudo dos campos de edição da página
+    var numero = Number(inNumero.value);
+    
+    // verifica se o resto da divisão 
+   if ( numero == 0 || isNaN(numero)){
+     alert("Por farvor digite um número válido!");
+     inNumero.focus();
+     return // Se não colocar ele vai dar uma das respostas abaixo
+    }
+    if( numero % 2 == 0 ){
+        outResposta.textContent = " O número é Par!"
+    }
+    else{
+        outResposta.textContent = " O número é Impar!"
+    }
+}
+    var btCalcular = document.getElementById("btCalcular")
+    btCalcular.addEventListener("click",parOuImpar);
+    
+</script>
+</body>
+</html>

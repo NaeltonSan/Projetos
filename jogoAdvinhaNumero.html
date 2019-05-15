@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var numeroPensado = Math.round(Math.random() * 10);
+        var chute = Number(prompt(" Já pensei. Qual numero vc acha que é?"));
+        if (chute == numeroPensado) {
+            alert(" Parabens, acertou! O numero foi " + numeroPensado)
+        }
+        else {
+            alert("Errou , tinha pensado no: " + numeroPensado)
+            if (chute > numeroPensado) {
+                alert("O numero que vc chutou é maior que o numero pensado!")
+            }
+            else {
+                alert("O numero que vc chutou é menor que o numero pensado!")
+            }
+        }
+    </script>
+</body>
+
+</html>

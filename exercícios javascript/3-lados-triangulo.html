@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Programa Lado de Triangulos</h1>
+<p>lado A : <input type="text" id="inladoA"></p>
+<p>lado B : <input type="text" id="inladoB"></p>
+<p>lado C : <input type="text" id="inladoC"></p>
+<input type="button" value="Verificar lados." id="btCalcular">
+<h2 id="outPodeOuNaoFormarTrigangulo"></h2>
+<h2 id="outTipoTriandulo"></h2>
+
+<script>
+    function triangulo(){
+    var ladoA = document.getElementById("inladoA");
+    var ladoB = document.getElementById("inladoB");
+    var ladoC = document.getElementById("inladoC")
+    // obter conteudo dos campos de edição da página
+    var lado1 = Number(inladoA.value);
+    var lado2 = Number(inladoB.value);
+    var lado3 = Number(inladoC.value);
+
+    // verifica validade do campo valor
+    if ( (lado1 == 0 || isNaN(lado1) ) || (lado2 == 0 || isNaN(lado2)) || (lado3 == 0 || isNaN(lado3) )) {
+    alert("Informe uma medida válida para os lados do triangulo.");      // exibe alerta
+    inladoA.focus();                          // posiciona no campo inladoA
+    return;                                    // retorna
+  }
+    if( (lado1 > lado2 + lado3) || (lado2 > lado1 + lado3) || (lado3 > lado1 + lado2) ){
+        alert("Com essas medidas é impossivel formar um triângulo.");      
+    inladoA.focus();                          
+    return;
+    } else{
+      outPodeOuNaoFormarTrigangulo.textContent = "Lados podem formar um triângulo";
+    if (lado1 == lado2 && lado1 == lado3) {
+        outTipoTriandulo.textContent = "Tipo: Equilátero";
+    } else if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
+        outTipoTriandulo.textContent = "Tipo: Isósceles";      
+    } else {
+        outTipoTriandulo.textContent = "Tipo: Escaleno";            
+    }
+  }
+    }
+    var btCalcular = document.getElementById("btCalcular")
+    btCalcular.addEventListener("click",triangulo);
+    
+</script>
+</body>
+</html>

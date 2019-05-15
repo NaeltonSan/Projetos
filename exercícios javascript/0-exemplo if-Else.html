@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    
+</head>
+<body>
+<h1> Programa Situação do Aluno</h1>
+
+<p>Nome do Alino:<input type="text" id="inNomeAluno"></p>
+<p>1ª nota:<input type="number" id="inNota1"></p>
+<p>2ª nota:<input type="number" id="inNota2"></p>
+<input type="button" value="Exibir média e situação" id="btMediaSituacao">
+
+<p id="outMedia"></p>
+<p id="outSituacao"></p>
+
+<script>
+    function mediaSituacao(){
+        var inNomeAluno = document.getElementById("inNomeAluno");
+        var inNota1 = document.getElementById("inNota1");
+        var inNota2 = document.getElementById("inNota2");
+        var outMedia = document.getElementById("outMedia");
+        var outSituacao = document.getElementById("outSituacao");
+    
+    // obter conteudo dos campos de edição da página
+    var nome = inNomeAluno.value;
+    var nota1 = Number(inNota1.value);
+    var nota2 = Number(inNota2.value);
+    //calcular a média das notas
+    var media = (nota1 + nota2)/2
+    //apresenta a média
+    outMedia.textContent = "Média das Notas: " + media.toFixed(1);
+    // cria as condições
+    if(media>=7){
+        //altera o texto e  cor
+        outSituacao.textContent = "Parabéns " + nome + " você foi Aprovado!";
+        outSituacao.style.color = "blue";
+    } else if( media >=4){
+        outSituacao.textContent =  nome + " você está de Recuperação!";
+        outSituacao.style.color = "green";
+    }
+    else{
+        outSituacao.textContent = "Desculpa, " + nome + " você foi Reprovado, Tente novamente!";
+        outSituacao.style.color = "red";
+    }
+    }
+    var btMediaSituacao = document.getElementById("btMediaSituacao")
+    btMediaSituacao.addEventListener("click",mediaSituacao);
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Charles Babbage</title>
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+
+    <style>
+        .container {
+            width: 600px;
+            margin: 0 auto;
+            padding: 15px 0;
+        }
+
+        #main {
+            background-color: #CFCFCF;
+        }
+
+        #title {
+            font-size: 3rem;
+        }
+
+        #img-div {
+            width: 100%;
+            height: auto;
+            max-width: 150px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        .container div:nth-child(1) {
+            text-align: center;
+            padding-bottom: 25px;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        .flex-container-img {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-content: stretch;
+            align-items: flex-start;
+        }
+
+        .flex-item-img {
+            order: 0;
+            flex: 0 1 auto;
+            align-self: auto;
+        }
+    </style>
+</head>
+
+<body id="main">
+    <div class="container">
+        <div>
+            <h1 id="title"> Charles Babbage </h1>
+        </div>
+        <div id="flex-container-img">
+            <div class="flex-item-img">
+                <img id=img-div src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Charles-babbage.jpg" alt="Charles Babbage">
+            </div>
+        </div>
+        <div>
+            <p>Charles Babbage (Londres, 26 de Dezembro de 1791 — Londres, 18 de Outubro de 1871)
+                foi um cientista, matemático, filósofo, engenheiro mecânico e inventor inglês nascido
+                em Teignmouth,Devon que originou o conceito de um computador programável junto à
+                condessa de Lovelace, Augusta Ada King.</p>
+            <span> Fonte:<a href="https://pt.wikipedia.org/wiki/Charles_Babbage" target="_blank">Wikipedia</a></span>
+        </div>
+    </div>
+</body>
+
+</html>
