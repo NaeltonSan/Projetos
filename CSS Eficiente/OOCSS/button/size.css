@@ -1,0 +1,10 @@
+.btn-sm{
+    padding: .5em .7em;
+}
+.btn-md{
+    padding: 1em 1.4em;
+}
+.btn-lg{
+    width: 50%;
+    padding: 2em;
+}

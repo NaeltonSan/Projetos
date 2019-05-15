@@ -1,0 +1,9 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 30px;
+}
+button{
+    margin: 30px;
+}
